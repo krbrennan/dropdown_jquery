@@ -37,26 +37,27 @@
     $( "#accordion" ).accordion({
       collapsible: true,
       active:false,
-
-
     });
     $ (".box").click(function(e){
+      // if you click a box that has a down-arrow, it will
+      // be replaced with an up-arrow
       if($("#arrow",this).hasClass("arrow-down")){
         $("#arrow",this).addClass("arrow-up");
         $("#arrow",this).removeClass("arrow-down");
         return;
       }
 
+      // ex: if box 1 is open and has a down-arrow
+      // and you click on box 2,
+      // this will give box 1 a down-arrow
       $(".arrow-down").not(this).each(function(e){
-        console.log(e);
         $(this).removeClass("arrow-down");
         $(this).addClass("arrow-up");
       })
 
-
+      // onClick the respective box will get a down-arrow
       $(".arrow-up", this).addClass("arrow-down")
       $("#arrow", this).removeClass("arrow-up")
-
     });
   </script>
   </body>
