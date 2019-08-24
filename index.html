@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+  <body>
+
+
+  <div id="accordion">
+
+    <div class="box">
+      <div id="arrow" class="arrow-up"></div>
+      <h3>First Box</h3>
+    </div>
+    <div>
+      <p>Incredible Box #1</p>
+    </div>
+
+    <div class="box">
+      <div id="arrow" class="arrow-up"></div>
+      <h3>Second Box</h3>
+    </div>
+    <div>
+      <p>Wow, Incredible Box #2</p>
+    </div>
+
+
+
+
+  <script>
+    $( "#accordion" ).accordion({
+      collapsible: true,
+      active:false,
+
+
+    });
+    $ (".box").click(function(e){
+      if($("#arrow",this).hasClass("arrow-down")){
+        $("#arrow",this).addClass("arrow-up");
+        $("#arrow",this).removeClass("arrow-down");
+        return;
+      }
+
+      $(".arrow-down").not(this).each(function(e){
+        console.log(e);
+        $(this).removeClass("arrow-down");
+        $(this).addClass("arrow-up");
+      })
+
+
+      $(".arrow-up", this).addClass("arrow-down")
+      $("#arrow", this).removeClass("arrow-up")
+
+    });
+  </script>
+  </body>
+</html>
